@@ -1,4 +1,4 @@
-# MNXB11 conflicted fairytale, branch main
+# MNXB11 resolved conflict fairytale
 Once upon a time,
 there was an **evil** _witch_
 and everyone was afraid of her
