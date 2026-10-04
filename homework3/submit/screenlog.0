@@ -1,0 +1,58 @@
+cat run_in_container_calculatePI.sh
+cat calculatepi.sbatch-jieqi.sh
+sbatch calculatepi.sbatch-jieqi.sh
+cp calculatepi.sbatch-jieqi.sh wasted.sbatch
+sed -i 's/#SBATCH -J .*/#SBATCH -J "WASTED"/' wasted.sbatch
+sbatch wasted.sbatch
+sbatch wasted.sbatch
+squeue -u ji6485qi^[[201~kji6485qi@cosmos-pkf:~/git/MNXB11-homework/homework3/calculatePI/scripts\[?2004h[ji6485qi@cosmos-pkf scripts]$ cat run_in_container_calculatePI.sh
+[?2004l#!/bin/sh
+# This script runs the calculatePI.sh script using the container `mnxb11_al9.latest.sif` with minimum required parameters
+# -B mounts the project directory inside the container so that is visible also inside the container
+apptainer run -B /projects:/projects /projects/hep/fs11/share/mnxb11/containers/mnxb11_al9.latest.sif ./calculatePI_setup.sh
+
+
+kji6485qi@cosmos-pkf:~/git/MNXB11-homework/homework3/calculatePI/scripts\[?2004h[ji6485qi@cosmos-pkf scripts]$ cat calculatepi.sbatch-jieqi.sh
+[?2004l#!/bin/sh
+#SBATCH -J "MNXB11 Pi homework"
+#SBATCH --time=00:15:00
+#SBATCH -A hep2023-1-6
+#SBATCH --mem=32G
+#SBATCH --output=calculatePI-%j.out
+
+run_in_container_calculatePI.sh
+kji6485qi@cosmos-pkf:~/git/MNXB11-homework/homework3/calculatePI/scripts\[?2004h[ji6485qi@cosmos-pkf scripts]$ sbatch calculatepi.sbatch-jieqi.sh
+[?2004lSubmitted batch job 3784929
+kji6485qi@cosmos-pkf:~/git/MNXB11-homework/homework3/calculatePI/scripts\[?2004h[ji6485qi@cosmos-pkf scripts]$ cp calculatepi.sbatch-jieqi.sh wasted.sbatch
+[?2004lkji6485qi@cosmos-pkf:~/git/MNXB11-homework/homework3/calculatePI/scripts\[?2004h[ji6485qi@cosmos-pkf scripts]$ sed -i 's/#SBATCH -J .*/#SBATCH -J "WASTED"/' wasted.sbatch
+[?2004lkji6485qi@cosmos-pkf:~/git/MNXB11-homework/homework3/calculatePI/scripts\[?2004h[ji6485qi@cosmos-pkf scripts]$ sbatch wasted.sbatch
+[?2004lSubmitted batch job 3784930
+kji6485qi@cosmos-pkf:~/git/MNXB11-homework/homework3/calculatePI/scripts\[?2004h[ji6485qi@cosmos-pkf scripts]$ sbatch wasted.sbatch
+[?2004lSubmitted batch job 3784931
+kji6485qi@cosmos-pkf:~/git/MNXB11-homework/homework3/calculatePI/scripts\[?2004h[ji6485qi@cosmos-pkf scripts]$ squeue -u ji6485qi~kji6485qi@cosmos-pkf:~/git/MNXB11-homework/homework3/calculatePI/scripts\[?2004h[ji6485qi@cosmos-pkf scripts]$ cd ~/git/MNXB11-homework/homework3/calculatePI/scripts
+[?2004lkji6485qi@cosmos-pkf:~/git/MNXB11-homework/homework3/calculatePI/scripts\[?2004h[ji6485qi@cosmos-pkf scripts]$ screen -L
+[?2004lkji6485qi@cosmos-pkf:~/git/MNXB11-homework/homework3/calculatePI/scripts\[?2004h[ji6485qi@cosmos-pkf scripts]$ cat run_in_container_calculatePI.sh
+[?2004l#!/bin/sh
+# This script runs the calculatePI.sh script using the container `mnxb11_al9.latest.sif` with minimum required parameters
+# -B mounts the project directory inside the container so that is visible also inside the container
+apptainer run -B /projects:/projects /projects/hep/fs11/share/mnxb11/containers/mnxb11_al9.latest.sif ./calculatePI_setup.sh
+
+
+kji6485qi@cosmos-pkf:~/git/MNXB11-homework/homework3/calculatePI/scripts\[?2004h[ji6485qi@cosmos-pkf scripts]$ cat calculatepi.sbatch-jieqi.sh
+[?2004l#!/bin/sh
+#SBATCH -J "MNXB11 Pi homework"
+#SBATCH --time=00:15:00
+#SBATCH -A hep2023-1-6
+#SBATCH --mem=32G
+#SBATCH --output=calculatePI-%j.out
+
+run_in_container_calculatePI.sh
+kji6485qi@cosmos-pkf:~/git/MNXB11-homework/homework3/calculatePI/scripts\[?2004h[ji6485qi@cosmos-pkf scripts]$ sbatch calculatepi.sbatch-jieqi.sh
+[?2004lSubmitted batch job 3784932
+kji6485qi@cosmos-pkf:~/git/MNXB11-homework/homework3/calculatePI/scripts\[?2004h[ji6485qi@cosmos-pkf scripts]$ cp calculatepi.sbatch-jieqi.sh wasted.sbatch
+[?2004lkji6485qi@cosmos-pkf:~/git/MNXB11-homework/homework3/calculatePI/scripts\[?2004h[ji6485qi@cosmos-pkf scripts]$ sed -i 's/#SBATCH -J .*/#SBATCH -J "WASTED"/' wasted.sbatch
+[?2004lkji6485qi@cosmos-pkf:~/git/MNXB11-homework/homework3/calculatePI/scripts\[?2004h[ji6485qi@cosmos-pkf scripts]$ sbatch wasted.sbatch
+[?2004lSubmitted batch job 3784933
+kji6485qi@cosmos-pkf:~/git/MNXB11-homework/homework3/calculatePI/scripts\[?2004h[ji6485qi@cosmos-pkf scripts]$ sbatch wasted.sbatch
+[?2004lSubmitted batch job 3784934
+kji6485qi@cosmos-pkf:~/git/MNXB11-homework/homework3/calculatePI/scripts\[?2004h[ji6485qi@cosmos-pkf scripts]$ squeue -u ji6485qi
